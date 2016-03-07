@@ -36,3 +36,31 @@ var snowYetiAlert      = warningMaker("snow yeti");
 // call the two functions here
 killerPenguinAlert(6, "Ice Caves");
 snowYetiAlert(1, "Blizzard Beach");
+
+
+
+// Self Practice:
+
+
+function mysterySum() {
+  var secretNum = 8;
+  var sum = function(num) {
+    return sum = secretNum + num
+  }
+  return sum;
+}
+
+
+console.log(mysterySum()(2))
+
+function mysterySum2() {
+  var secretNum = 2; // will not change in this parent scope 
+  function sum(num) {
+    secretNum += 8 // does not actually change the secretNum in the parent scope
+    return secretNum + num  
+  }
+  console.log(secretNum) // was not changed in parent by internal function sum()
+  return (sum);
+}
+
+console.log(mysterySum2()(2))
