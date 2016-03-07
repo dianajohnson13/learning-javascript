@@ -1,4 +1,4 @@
-// CLOSURES! Examples from Code School Javascript Roadtrip Part 3
+CLOSURES! Examples from Code School Javascript Roadtrip Part 3
 
 function mystery() {
   var secret = 6;
@@ -51,16 +51,14 @@ function mysterySum() {
 }
 
 
-console.log(mysterySum()(2))
+// console.log(mysterySum()(2))
 
 function mysterySum2() {
-  var secretNum = 2; // will not change in this parent scope 
-  function sum(num) {
-    secretNum += 8 // does not actually change the secretNum in the parent scope
-    return secretNum + num  
-  }
-  console.log(secretNum) // was not changed in parent by internal function sum()
-  return (sum);
+  var secretNum = 2; 
+  return function sum(num) {
+    secretNum += 8;
+    return secretNum + num;
+  };
 }
 
 console.log(mysterySum2()(2))
